@@ -1,0 +1,4 @@
+project=twitter_demo
+architecture=container
+test=minitest
+template=erb
