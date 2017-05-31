@@ -3,7 +3,7 @@ module Web::Controllers::Session
     include Web::Action
 
     def call(_params)
-      user = UserRepository.from_omniauth(request.env["omniauth.auth"])
+      user = UserRepository.new.from_omniauth(request.env["omniauth.auth"])
 
       warden.set_user user
 
