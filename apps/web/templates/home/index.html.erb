@@ -1,0 +1,15 @@
+<% if current_user %>
+  <div>
+    <h2>Dashboard</h2>
+    <p>
+      Welcome, <%= current_user.name %>
+    </p>
+  </div>
+<% else %>
+  <div>
+
+    <p>
+      <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+    </p>
+  </div>
+<% end %>

@@ -81,11 +81,18 @@ module Web
       #
       # See: http://www.rubydoc.info/gems/rack/Rack/Session/Cookie
       #
-      # sessions :cookie, secret: ENV['WEB_SESSIONS_SECRET']
+      sessions :cookie, secret: ENV['WEB_SESSIONS_SECRET']
 
       # Configure Rack middleware for this application
       #
       # middleware.use Rack::Protection
+      middleware.use Warden::Manager do |manager|
+        manager.failure_app = Web::Controllers::Session::Failure.new
+      end
+      
+      middleware.use OmniAuth::Builder do
+        provider :twitter, "5Ka9O3vGVCnxmHOK67gc61Bpi", "RoWRc0pG3q0UJ88kHN69sRGw44M06EaHOuUhLvR8BLojz2uQls"
+      end
 
       # Default format for the requests that don't specify an HTTP_ACCEPT header
       # Argument: A symbol representation of a mime type, defaults to :html
