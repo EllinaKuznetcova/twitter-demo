@@ -8,6 +8,7 @@ gem 'pg'
 
 gem "omniauth-twitter"
 gem "warden"
+gem "twitter"
 
 group :development do
   # Code reloading

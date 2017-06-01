@@ -4,6 +4,10 @@
     <p>
       Welcome, <%= current_user.name %>
     </p>
+    <% tweets.each do |tweet| %>
+      Text: <%= tweet[:full_text] %><br />
+      Author: <%= tweet[:name] %><br /><br />
+    <% end %>
   </div>
 <% else %>
   <div>

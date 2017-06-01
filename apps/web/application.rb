@@ -89,7 +89,7 @@ module Web
       middleware.use Warden::Manager do |manager|
         manager.failure_app = Web::Controllers::Session::Failure.new
       end
-      
+
       middleware.use OmniAuth::Builder do
         provider :twitter, "5Ka9O3vGVCnxmHOK67gc61Bpi", "RoWRc0pG3q0UJ88kHN69sRGw44M06EaHOuUhLvR8BLojz2uQls"
       end
