@@ -10,6 +10,8 @@ gem "omniauth-twitter"
 gem "warden"
 gem "twitter"
 
+gem 'sass'
+
 group :development do
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading

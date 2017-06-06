@@ -3,3 +3,5 @@
 /tmp
 .byebug_history
 logfile
+*/.DS_Store
+.DS_Store
