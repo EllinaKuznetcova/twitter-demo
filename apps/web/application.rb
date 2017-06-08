@@ -247,7 +247,7 @@ module Web
         default-src 'none';
         script-src 'self';
         connect-src 'self';
-        img-src 'self' https: data:;
+        img-src 'self' https: data: http:;
         style-src 'self' 'unsafe-inline' https:;
         font-src 'self' data: URIs https:;
         object-src 'none';

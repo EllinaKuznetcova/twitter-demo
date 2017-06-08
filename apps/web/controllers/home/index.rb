@@ -22,7 +22,10 @@ module Web::Controllers::Home
         ).home_timeline
         .map {|item| {
           full_text: item.full_text, 
-          name: item.user.name
+          name: item.user.name,
+          favorite_count: item.favorite_count,
+          user_image_url: item.user.profile_image_uri.to_s,
+          created_at: item.created_at.to_s
         }}
       else
         nil
