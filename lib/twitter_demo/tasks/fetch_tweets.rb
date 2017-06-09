@@ -1,10 +1,12 @@
+require "ostruct"
+
 class FetchTweets
   def perform 
     tweet_repository = TweetRepository.new
 
     UserRepository.new.all.each do |user|
 
-      last_tweet = tweet_repository.find_last_by_user_id(user.id.to_s)
+      last_tweet = tweet_repository.find_last_by_user_id(user.id.to_s) || NullTweet.new(tweet_id: "1")
       
       tweets = TwitterClient.new(
           token: user.twitter_access_token, 
@@ -23,4 +25,8 @@ class FetchTweets
       end
     end
   end
+
+  private
+
+    class NullTweet < OpenStruct; end
 end
