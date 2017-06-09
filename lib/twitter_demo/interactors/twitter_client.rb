@@ -9,6 +9,6 @@ class TwitterClient
   end
 
   def method_missing(method, *args, &block)
-    @client.public_send(method)
+    @client.public_send(method, *args, &block)
   end
 end

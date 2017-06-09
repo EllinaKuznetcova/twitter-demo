@@ -6,23 +6,23 @@
       <% tweets.each do |tweet| %>
           <div class="event">
             <div class="label">
-              <img src= <%= tweet[:user_image_url] %>>
+              <img src= <%= tweet.author_image_url %>>
             </div>
             <div class="content">
               <div class="summary">
                 <a class="user">
-                  <%= tweet[:name] %>
+                  <%= tweet.author %>
                 </a> 
                 <div class="date">
-                  <span class="date-container" data-date="<%= tweet[:created_at] %>"></span>
+                  <span class="date-container" data-date="<%= tweet.published_at %>"></span>
                 </div>
                 <div class="extra text">
-                <%= tweet[:full_text] %>
+                <%= tweet.text %>
                 </div>
               </div>
               <div class="meta">
                 <a class="like">
-                  <i class="like icon "></i> <%= tweet[:favorite_count] %>
+                  <i class="like icon "></i> <%= tweet.favorite_count %>
                 </a>
               </div>
             </div>
