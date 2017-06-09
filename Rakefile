@@ -8,5 +8,14 @@ Rake::TestTask.new do |t|
   t.warning = false
 end
 
+task :environment do
+  require_relative './config/environment'
+  # Hanami::Application.preload!
+end
+
 task default: :test
 task spec: :test
+
+task fetch_tweets: :environment do
+  FetchTweets.new.perform
+end
