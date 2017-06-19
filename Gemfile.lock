@@ -84,6 +84,8 @@ GEM
       hanami-utils (~> 1.0)
       rom-repository (~> 1.3)
       rom-sql (~> 1.2)
+    hanami-pagination (0.1.0)
+      hanami-model (~> 1.0)
     hanami-router (1.0.0)
       hanami-utils (~> 1.0)
       http_router (= 0.11.2)
@@ -199,6 +201,7 @@ DEPENDENCIES
   dotenv (~> 2.0)
   hanami (~> 1.0)
   hanami-model (~> 1.0)
+  hanami-pagination
   minitest
   omniauth-twitter
   pg

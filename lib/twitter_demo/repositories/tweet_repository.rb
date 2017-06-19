@@ -4,7 +4,6 @@ class TweetRepository < Hanami::Repository
     .order(:published_at)
     .reverse
     .limit(limit)
-    .to_a
   end
   
   def find_last_by_user_id(user_id)

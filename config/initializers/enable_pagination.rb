@@ -1,0 +1,1 @@
+TweetRepository.enable_pagination!

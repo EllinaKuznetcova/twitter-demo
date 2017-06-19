@@ -1,9 +1,9 @@
 <% if current_user %>
   <div>
   <br><br>
-    <div class="ui center aligned grid">
+    <div class="ui center aligned borderless grid">
      <div class="ui feed">
-      <% tweets.each do |tweet| %>
+        <% tweets.each do |tweet| %>
           <div class="event">
             <div class="label">
               <img src= <%= tweet.author_image_url %>>
@@ -30,6 +30,17 @@
         <% end %>
       </div>
     </div>
+    <br>
+    <div class="ui center aligned container">
+      <div class="ui buttons">
+        <% all_pages.each do |page_num| %>
+          <div class="page">
+            <%= link_to page_num, "/?page=#{page_num}", class: "ui #{class_for(current_page, page_num)}basic button" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <br>   
   </div>
 <% else %>
   <div>

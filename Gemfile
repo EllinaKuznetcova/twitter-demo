@@ -10,6 +10,7 @@ gem "omniauth-twitter"
 gem "warden"
 gem "twitter"
 
+gem 'hanami-pagination'
 gem 'sass'
 
 group :development do
