@@ -10,10 +10,9 @@ module Web::Controllers::Home
 
     def call(params)
       @current_user ||= warden.user
+      
       get_tweets
-
-      @all_pages = pager.all_pages
-      @current_page = params[:page].to_i
+      set_pages
     end
 
     def warden
@@ -26,6 +25,13 @@ module Web::Controllers::Home
         @tweets = TweetDecorator.wrap(tweets_for_current_page)
       else
         nil
+      end
+    end
+
+    def set_pages
+      if @current_user
+        @all_pages = pager.all_pages
+        @current_page = params[:page].to_i
       end
     end
   end
