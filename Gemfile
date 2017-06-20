@@ -17,11 +17,11 @@ group :development do
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading
   gem 'shotgun'
-  gem 'byebug'
 end
 
 group :test, :development do
   gem 'dotenv', '~> 2.0'
+  gem 'byebug'
 end
 
 group :test do
