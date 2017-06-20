@@ -7,6 +7,6 @@ describe Web::Controllers::Session::Failure do
 
   it 'is successful' do
     response = action.call(params)
-    response[0].must_equal 200
+    response[0].must_equal 404
   end
 end
